@@ -1,0 +1,17 @@
+sudo apt update
+
+sudo apt install -y curl gpg
+
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+
+
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+
+sudo apt update
+
+sudo apt install -y code
+
+Open a terminal on your Linux system:
+
+code
